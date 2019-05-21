@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3833DB462294A8A400398A19 /* ElegirUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833DB452294A8A400398A19 /* ElegirUsuarioViewController.swift */; };
 		3833DB4A2294B1A200398A19 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833DB492294B1A200398A19 /* Usuario.swift */; };
+		3833DB4C2294BE2F00398A19 /* CrearUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833DB4B2294BE2F00398A19 /* CrearUsuarioViewController.swift */; };
 		38EA8E9F228DF40800E2111F /* SnapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EA8E9E228DF40800E2111F /* SnapsViewController.swift */; };
 		38EA8EA1228DFAC500E2111F /* ImagenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EA8EA0228DFAC500E2111F /* ImagenViewController.swift */; };
 		38F22D0F2284B3EE00A54D52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F22D0E2284B3EE00A54D52 /* AppDelegate.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		3833DB452294A8A400398A19 /* ElegirUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElegirUsuarioViewController.swift; sourceTree = "<group>"; };
 		3833DB492294B1A200398A19 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
+		3833DB4B2294BE2F00398A19 /* CrearUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrearUsuarioViewController.swift; sourceTree = "<group>"; };
 		38EA8E9D228DF25200E2111F /* Snapchat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Snapchat.entitlements; sourceTree = "<group>"; };
 		38EA8E9E228DF40800E2111F /* SnapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapsViewController.swift; sourceTree = "<group>"; };
 		38EA8EA0228DFAC500E2111F /* ImagenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagenViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				38EA8E9E228DF40800E2111F /* SnapsViewController.swift */,
 				38F22D102284B3EE00A54D52 /* iniciarSesionViewController.swift */,
 				3833DB452294A8A400398A19 /* ElegirUsuarioViewController.swift */,
+				3833DB4B2294BE2F00398A19 /* CrearUsuarioViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				38F22D112284B3EE00A54D52 /* iniciarSesionViewController.swift in Sources */,
 				38F22D232284C7AF00A54D52 /* pruebaViewController.swift in Sources */,
 				38F22D0F2284B3EE00A54D52 /* AppDelegate.swift in Sources */,
+				3833DB4C2294BE2F00398A19 /* CrearUsuarioViewController.swift in Sources */,
 				3833DB462294A8A400398A19 /* ElegirUsuarioViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

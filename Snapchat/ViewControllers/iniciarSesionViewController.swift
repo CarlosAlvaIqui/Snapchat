@@ -13,8 +13,12 @@ import FBSDKLoginKit
 
 class iniciarSesionViewController: UIViewController {
 
+    @IBAction func btnSgCreacionUsuario(_ sender: Any) {
+        performSegue(withIdentifier: "segueCreacionUsuario", sender: nil)
+    }
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
     @IBAction func iniciarSesionTapped(_ sender: Any) {
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!){ (user, error) in
             print("Intentamos iniciar sesion")
