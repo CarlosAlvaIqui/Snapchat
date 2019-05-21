@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3833DB462294A8A400398A19 /* ElegirUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833DB452294A8A400398A19 /* ElegirUsuarioViewController.swift */; };
+		3833DB4A2294B1A200398A19 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833DB492294B1A200398A19 /* Usuario.swift */; };
 		38EA8E9F228DF40800E2111F /* SnapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EA8E9E228DF40800E2111F /* SnapsViewController.swift */; };
 		38EA8EA1228DFAC500E2111F /* ImagenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EA8EA0228DFAC500E2111F /* ImagenViewController.swift */; };
 		38F22D0F2284B3EE00A54D52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F22D0E2284B3EE00A54D52 /* AppDelegate.swift */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3833DB452294A8A400398A19 /* ElegirUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElegirUsuarioViewController.swift; sourceTree = "<group>"; };
+		3833DB492294B1A200398A19 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		38EA8E9D228DF25200E2111F /* Snapchat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Snapchat.entitlements; sourceTree = "<group>"; };
 		38EA8E9E228DF40800E2111F /* SnapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapsViewController.swift; sourceTree = "<group>"; };
 		38EA8EA0228DFAC500E2111F /* ImagenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagenViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +62,25 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		3833DB472294B0FD00398A19 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				38EA8EA0228DFAC500E2111F /* ImagenViewController.swift */,
+				38EA8E9E228DF40800E2111F /* SnapsViewController.swift */,
+				38F22D102284B3EE00A54D52 /* iniciarSesionViewController.swift */,
+				3833DB452294A8A400398A19 /* ElegirUsuarioViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3833DB482294B16B00398A19 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3833DB492294B1A200398A19 /* Usuario.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		38F22D022284B3EE00A54D52 = {
 			isa = PBXGroup;
 			children = (
@@ -79,17 +102,16 @@
 		38F22D0D2284B3EE00A54D52 /* Snapchat */ = {
 			isa = PBXGroup;
 			children = (
+				3833DB482294B16B00398A19 /* Models */,
+				3833DB472294B0FD00398A19 /* ViewControllers */,
 				38EA8E9D228DF25200E2111F /* Snapchat.entitlements */,
 				38F22D202284B71C00A54D52 /* GoogleService-Info.plist */,
 				38F22D0E2284B3EE00A54D52 /* AppDelegate.swift */,
-				38F22D102284B3EE00A54D52 /* iniciarSesionViewController.swift */,
 				38F22D122284B3EE00A54D52 /* Main.storyboard */,
 				38F22D152284B3EF00A54D52 /* Assets.xcassets */,
 				38F22D172284B3EF00A54D52 /* LaunchScreen.storyboard */,
 				38F22D1A2284B3EF00A54D52 /* Info.plist */,
 				38F22D222284C7AF00A54D52 /* pruebaViewController.swift */,
-				38EA8E9E228DF40800E2111F /* SnapsViewController.swift */,
-				38EA8EA0228DFAC500E2111F /* ImagenViewController.swift */,
 			);
 			path = Snapchat;
 			sourceTree = "<group>";
@@ -242,9 +264,11 @@
 			files = (
 				38EA8E9F228DF40800E2111F /* SnapsViewController.swift in Sources */,
 				38EA8EA1228DFAC500E2111F /* ImagenViewController.swift in Sources */,
+				3833DB4A2294B1A200398A19 /* Usuario.swift in Sources */,
 				38F22D112284B3EE00A54D52 /* iniciarSesionViewController.swift in Sources */,
 				38F22D232284C7AF00A54D52 /* pruebaViewController.swift in Sources */,
 				38F22D0F2284B3EE00A54D52 /* AppDelegate.swift in Sources */,
+				3833DB462294A8A400398A19 /* ElegirUsuarioViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

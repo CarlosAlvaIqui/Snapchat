@@ -37,7 +37,7 @@
             </objects>
             <point key="canvasLocation" x="1071" y="-613"/>
         </scene>
-        <!--Title-->
+        <!--Enviar Mensaje-->
         <scene sceneID="KVi-lQ-H9i">
             <objects>
                 <viewController id="xm6-0J-TLj" customClass="ImagenViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
@@ -84,7 +84,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fbp-P1-b3T"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="RPf-nC-VRA">
+                    <navigationItem key="navigationItem" title="Enviar Mensaje" id="RPf-nC-VRA">
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="87e-Mt-fhk">
                             <connections>
                                 <action selector="camaraTapped:" destination="xm6-0J-TLj" id="E69-5L-Fuy"/>
@@ -207,16 +207,33 @@
             </objects>
             <point key="canvasLocation" x="58" y="165"/>
         </scene>
-        <!--View Controller-->
+        <!--Lista de Usuarios-->
         <scene sceneID="42j-tW-ofm">
             <objects>
-                <viewController id="lIj-5u-Ygi" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="lIj-5u-Ygi" customClass="ElegirUsuarioViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D6T-k9-h2N">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IUn-tM-2GM">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IUn-tM-2GM" firstAttribute="centerX" secondItem="D6T-k9-h2N" secondAttribute="centerX" id="6cI-ab-nwo"/>
+                            <constraint firstItem="IUn-tM-2GM" firstAttribute="leading" secondItem="Jhg-kc-ObD" secondAttribute="leading" id="Xlj-Tr-oew"/>
+                            <constraint firstItem="IUn-tM-2GM" firstAttribute="top" secondItem="Jhg-kc-ObD" secondAttribute="top" id="dVM-as-vjM"/>
+                            <constraint firstItem="Jhg-kc-ObD" firstAttribute="trailing" secondItem="IUn-tM-2GM" secondAttribute="trailing" id="kCT-as-hou"/>
+                            <constraint firstItem="Jhg-kc-ObD" firstAttribute="bottom" secondItem="IUn-tM-2GM" secondAttribute="bottom" id="wkL-0r-eNM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Jhg-kc-ObD"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Lista de Usuarios" id="6q7-PF-SQe"/>
+                    <connections>
+                        <outlet property="listaUsuarios" destination="IUn-tM-2GM" id="7Vi-Nm-cMr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pih-Og-Yz5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
