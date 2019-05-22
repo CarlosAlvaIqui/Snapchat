@@ -265,6 +265,7 @@
                                 </state>
                                 <connections>
                                     <action selector="btnCrearUsuario:" destination="A9D-IN-ooQ" eventType="touchUpInside" id="uft-wv-XSo"/>
+                                    <segue destination="f07-qB-dtf" kind="presentation" identifier="seguesiguiente" id="Ubb-4U-NGJ"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contraseña" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IE0-E9-uN8">
@@ -392,4 +393,7 @@
     <resources>
         <image name="imagene" width="200" height="70"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Ubb-4U-NGJ"/>
+    </inferredMetricsTieBreakers>
 </document>
