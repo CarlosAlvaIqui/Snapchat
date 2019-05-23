@@ -14,6 +14,9 @@ class CrearUsuarioViewController: UIViewController {
     @IBOutlet weak var txtuser: UITextField!
     @IBOutlet weak var txtcontraseña: UITextField!
     
+    @IBAction func btnreturn(_ sender: Any) {
+        performSegue(withIdentifier: "segueregresar", sender: nil)
+    }
     @IBAction func btnCrearUsuario(_ sender: Any) {
 //        Auth.auth().signIn(withEmail: txtuser.text!, password: txtcontraseña.text!){ (user, error) in
 //            print("Intentamos iniciar sesion")
@@ -31,7 +34,7 @@ class CrearUsuarioViewController: UIViewController {
                 print("El usuario fue creado exitosamente")
             Database.database().reference().child("usuarios").child(user!.user.uid).child("email").setValue(user!.user.email)
                 
-                let alerta = UIAlertController(title: "Creacion de Usuario", message: "Usuario: \(self.txtuser.text!) Se creo correctamente.", preferredStyle: .alert)
+                let alerta = UIAlertController(title: "Desea crear este usuario?", message: "Usuario: \(self.txtuser.text!) Se creo correctamente.", preferredStyle: .alert)
                 
                 let btnOK = UIAlertAction(title: "Aceptar", style: .default, handler: { (UIAlertAction) in
                     self.performSegue(withIdentifier: "seguesiguiente", sender: nil)

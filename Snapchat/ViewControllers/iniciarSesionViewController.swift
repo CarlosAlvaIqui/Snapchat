@@ -55,7 +55,7 @@ class iniciarSesionViewController: UIViewController {
             if error != nil {
                 print("Se presento el siguiente error: \(error)")
 
-                let alerta = UIAlertController(title: "Quiere crear un nuevo usuario", message: "Usuario: \(self.emailTextField.text!) Se creo correctamente.", preferredStyle: .alert)
+                let alerta = UIAlertController(title: "El usuario no existe desea crear uno?", message: "Usuario: \(self.emailTextField.text!) Se creo correctamente.", preferredStyle: .alert)
                 
                 let btnOK = UIAlertAction(title: "Aceptar", style: .default, handler: { (UIAlertAction) in
                     self.performSegue(withIdentifier: "segueCreacionUsuario", sender: nil)
