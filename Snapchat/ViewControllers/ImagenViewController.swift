@@ -7,18 +7,22 @@
 //
 
 import UIKit
+import AVFoundation
+
 import Firebase
 
 class ImagenViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+    var grabarAudio:AVAudioRecorder?
+    var reproducirAudio:AVAudioPlayer?
+    var audioURL:URL?
     
     var imagePicker = UIImagePickerController()
     var imagenID = NSUUID().uuidString
-    
+    var audioID = NSUUID().uuidString
     @IBAction func camaraTapped(_ sender: Any) {
         imagePicker.sourceType = .savedPhotosAlbum
         imagePicker.allowsEditing = false
         present(imagePicker, animated: true, completion: nil)
-        
     }
     @IBOutlet weak var imageView: UIImageView!
     
@@ -33,19 +37,83 @@ class ImagenViewController: UIViewController, UIImagePickerControllerDelegate,UI
         present(imagePicker, animated: true, completion: nil)
     }
     
+    @IBOutlet weak var grabarButton: UIButton!
+    @IBAction func btnGrabarAudio(_ sender: Any) {
+        if grabarAudio!.isRecording{
+            grabarAudio?.stop()
+            grabarButton.setTitle("GRABAR", for: .normal)
+            reproducirButton.isEnabled = true
+            
+        }else{
+            grabarAudio?.record()
+            grabarButton.setTitle("Detender", for: .normal)
+            reproducirButton.isEnabled = false
+            
+        }
+    }
+    
+    @IBOutlet weak var reproducirButton: UIButton!
+    @IBAction func btnReproducir(_ sender: Any) {
+        do{
+            try reproducirAudio = AVAudioPlayer(contentsOf: audioURL!)
+            reproducirAudio!.play()
+            print("reproduciendo")
+        }catch{
+        }
+    }
+    
+    func configurarGrabacion(){
+        do{
+            let session = AVAudioSession.sharedInstance()
+            try session.setCategory(AVAudioSession.Category.playAndRecord, mode: AVAudioSession.Mode.default, options: [])
+            try session.overrideOutputAudioPort(.speaker)
+            try session.setActive(true)
+            
+            let basePath:String = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+            
+            let pathComponents = [basePath,"audio.m4a"]
+            audioURL = NSURL.fileURL(withPathComponents: pathComponents)!
+            
+            
+            print("g*******************")
+            print(audioURL!)
+            print("a*******************")
+            
+            var settings:[String:AnyObject] = [:]
+            settings[AVFormatIDKey] = Int(kAudioFormatMPEG4AAC) as AnyObject?
+            settings[AVSampleRateKey] = 44100.0 as AnyObject?
+            settings[AVNumberOfChannelsKey] = 2 as AnyObject
+            
+            grabarAudio = try AVAudioRecorder(url: audioURL!, settings: settings)
+            grabarAudio!.prepareToRecord()
+            
+        }catch let error as NSError{
+            print(error)
+        }
+        
+    }
+    
+    
+    
     @IBAction func elegirContactoTapped(_ sender: Any) {
         self.elegirContactoBoton.isEnabled = false
         let imagenesFolder = Storage.storage().reference().child("imagenes")
+        let audioFolder = Storage.storage().reference().child("audios_odebrech")
+
         let imagenData = imageView.image?.jpegData(compressionQuality: 0.50)
+        let audioData = NSData(contentsOf: audioURL!)! as Data?
+        
         let cargarImagen = imagenesFolder.child("\(imagenID).jpg")
-        cargarImagen.putData(imagenData!, metadata: nil) {
+        let cargarAudio = audioFolder.child("\(audioID).m4a")
+        
+        cargarAudio.putData(audioData!, metadata: nil) {
             (metadata, error) in
             if error != nil {
                 self.mostrarAlerta(titulo: "error", mensaje: "Se produjo un error al tratar de subir una imagen verifique su conxion a internet y vuelva a intentarlo", accion: "Aceptar")
                 self.elegirContactoBoton.isEnabled = true
                 print("ocurrio un error al subir la imagen \(error)")
             }else{
-                cargarImagen.downloadURL(completion: { (url, error) in
+                cargarAudio.downloadURL(completion: { (url, error) in
                     guard let enlaceURL = url else{
                         self.mostrarAlerta(titulo: "Error", mensaje: "Se produjo algun error al intentar obtener informacion de imagen", accion: "Cancelar")
                         self.elegirContactoBoton.isEnabled = true
@@ -91,6 +159,9 @@ class ImagenViewController: UIViewController, UIImagePickerControllerDelegate,UI
         super.viewDidLoad()
         imagePicker.delegate = self
         elegirContactoBoton.isEnabled = false
+        
+        configurarGrabacion()
+        reproducirButton.isEnabled = false
         // Do any additional setup after loading the view.
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

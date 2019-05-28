@@ -54,6 +54,21 @@
             </objects>
             <point key="canvasLocation" x="1071" y="-613"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="50O-ey-XED">
+            <objects>
+                <viewController id="hzP-Ca-ss3" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Num-Jf-4Ls">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Vlx-Gz-sr4"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GVg-jn-5Ng" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1951" y="-1355"/>
+        </scene>
         <!--Enviar Mensaje-->
         <scene sceneID="KVi-lQ-H9i">
             <objects>
@@ -87,17 +102,47 @@
                                     <action selector="elegirContactoTapped:" destination="xm6-0J-TLj" eventType="touchUpInside" id="aRr-jG-bBD"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnt-WF-eMl">
+                                <rect key="frame" x="174" y="342" width="185" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <state key="normal" title="Reproducir" image="reproducir 14.13.25">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnReproducir:" destination="xm6-0J-TLj" eventType="touchUpInside" id="Moa-CO-pQl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2UD-hs-w2O">
+                                <rect key="frame" x="16" y="342" width="134" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="134" id="05c-iY-VhK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Grabar" image="grabar 14.13.25">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnGrabarAudio:" destination="xm6-0J-TLj" eventType="touchUpInside" id="X7U-v9-9Rd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="H2L-Mr-Qgt" firstAttribute="centerX" secondItem="qfy-oV-tO2" secondAttribute="centerX" id="134-eN-wnR"/>
                             <constraint firstItem="YN4-O2-mF9" firstAttribute="width" secondItem="S4M-Og-2HY" secondAttribute="width" id="Mxo-xK-6hg"/>
                             <constraint firstItem="YN4-O2-mF9" firstAttribute="centerX" secondItem="qfy-oV-tO2" secondAttribute="centerX" id="NOR-A0-RTJ"/>
+                            <constraint firstItem="2UD-hs-w2O" firstAttribute="firstBaseline" secondItem="xnt-WF-eMl" secondAttribute="baseline" id="O9P-T8-OMv"/>
+                            <constraint firstItem="2UD-hs-w2O" firstAttribute="baseline" secondItem="xnt-WF-eMl" secondAttribute="firstBaseline" id="PjT-2p-OgX"/>
+                            <constraint firstItem="2UD-hs-w2O" firstAttribute="leading" secondItem="qfy-oV-tO2" secondAttribute="leadingMargin" id="QhR-wy-T5b"/>
+                            <constraint firstItem="2UD-hs-w2O" firstAttribute="bottom" secondItem="xnt-WF-eMl" secondAttribute="bottom" id="SqX-47-2Wf"/>
                             <constraint firstItem="H2L-Mr-Qgt" firstAttribute="top" secondItem="YN4-O2-mF9" secondAttribute="bottom" constant="20" id="WOl-eP-3j4"/>
                             <constraint firstItem="YN4-O2-mF9" firstAttribute="top" secondItem="S4M-Og-2HY" secondAttribute="bottom" constant="15" id="X6D-6H-pPM"/>
                             <constraint firstItem="H2L-Mr-Qgt" firstAttribute="width" secondItem="YN4-O2-mF9" secondAttribute="width" id="Z6z-I4-OOg"/>
+                            <constraint firstItem="xnt-WF-eMl" firstAttribute="leading" secondItem="2UD-hs-w2O" secondAttribute="trailing" constant="24" id="aWG-gr-pk7"/>
                             <constraint firstItem="S4M-Og-2HY" firstAttribute="top" secondItem="fbp-P1-b3T" secondAttribute="top" constant="20" id="gkl-QU-fbU"/>
                             <constraint firstItem="S4M-Og-2HY" firstAttribute="centerX" secondItem="qfy-oV-tO2" secondAttribute="centerX" id="iQy-VI-RGN"/>
+                            <constraint firstItem="2UD-hs-w2O" firstAttribute="top" secondItem="xnt-WF-eMl" secondAttribute="top" id="r1K-cw-mgQ"/>
+                            <constraint firstItem="xnt-WF-eMl" firstAttribute="top" secondItem="H2L-Mr-Qgt" secondAttribute="bottom" constant="28" id="tQ8-rA-2br"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fbp-P1-b3T"/>
                     </view>
@@ -113,18 +158,25 @@
                                     <action selector="mediaTapped:" destination="xm6-0J-TLj" id="Pnq-EJ-Vk9"/>
                                 </connections>
                             </barButtonItem>
+                            <barButtonItem systemItem="play" id="oU0-JQ-Mu4">
+                                <connections>
+                                    <segue destination="hzP-Ca-ss3" kind="show" id="x3D-65-3H0"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="descripcionTextField" destination="YN4-O2-mF9" id="EVt-Mf-LnL"/>
                         <outlet property="elegirContactoBoton" destination="H2L-Mr-Qgt" id="vmf-xe-1Ap"/>
+                        <outlet property="grabarButton" destination="2UD-hs-w2O" id="c2d-sx-o8h"/>
                         <outlet property="imageView" destination="S4M-Og-2HY" id="bw0-tO-Nm9"/>
+                        <outlet property="reproducirButton" destination="xnt-WF-eMl" id="vsn-JW-ca9"/>
                         <segue destination="lIj-5u-Ygi" kind="show" identifier="seleccionarContactoSegue" id="qXw-mi-PT1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VHT-bs-8d2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1968" y="-615"/>
+            <point key="canvasLocation" x="1967.2" y="-615.74212893553226"/>
         </scene>
         <!--Iniciar Sesion View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -468,7 +520,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="grabar 14.13.25" width="48" height="48"/>
         <image name="imagene" width="200" height="70"/>
+        <image name="reproducir 14.13.25" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Ubb-4U-NGJ"/>
